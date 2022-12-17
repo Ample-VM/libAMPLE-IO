@@ -1,0 +1,70 @@
+# AMPLE IO Library
+
+## Support
+- [ ] FileInfo
+    - [ ] FileInfo::Construct()
+        - [ ] Linux support
+        - [ ] Darwin support
+        - [ ] FreeBSD support
+        - [ ] Windows support
+    - [ ] FileInfo.GetExists()
+        - [ ] Linux support
+        - [ ] Darwin support
+        - [ ] FreeBSD support
+        - [ ] Windows support
+    - [ ] FileInfo.GetLength()
+        - [ ] Linux support
+        - [ ] Darwin support
+        - [ ] FreeBSD support
+        - [ ] Windows support
+    - [ ] FileInfo.GetName()
+        - [ ] Linux support
+        - [ ] Darwin support
+        - [ ] FreeBSD support
+        - [ ] Windows support
+    - [ ] FileInfo.Destroy()
+        - [ ] Linux support
+        - [ ] Darwin support
+        - [ ] FreeBSD support
+        - [ ] Windows support
+- [ ] File
+    - [ ] File::Construct()
+        - [ ] Linux support
+        - [ ] Darwin support
+        - [ ] FreeBSD support
+        - [ ] Windows support
+    - [ ] File.Open()
+        - [ ] Linux support
+        - [ ] Darwin support
+        - [ ] FreeBSD support
+        - [ ] Windows support
+    - [ ] File.Destroy()
+        - [ ] Linux support
+        - [ ] Darwin support
+        - [ ] FreeBSD support
+        - [ ] Windows support
+- [ ] FileStream
+    - [ ] FileStream::Construct()
+        - [ ] Linux support
+        - [ ] Darwin support
+        - [ ] FreeBSD support
+        - [ ] Windows support
+    - [ ] FileStream.Read()
+        - [ ] Linux support
+        - [ ] Darwin support
+        - [ ] FreeBSD support
+        - [ ] Windows support
+    - [ ] FileStream.Write()
+        - [ ] Linux support
+        - [ ] Darwin support
+        - [ ] FreeBSD support
+        - [ ] Windows support
+    - [ ] FileStream.Destroy()
+        - [ ] Linux support
+        - [ ] Darwin support
+        - [ ] FreeBSD support
+        - [ ] Windows support
+- [ ] C++ Support
+
+## Folder Structure
+OS/Architecture/Class/Function
