@@ -30,7 +30,7 @@
 struct FileInfo_t {
     const char* fileName;
     size_t fileNameLength;
-}
+};
 
 #ifdef __cplusplus
 extern "C"
