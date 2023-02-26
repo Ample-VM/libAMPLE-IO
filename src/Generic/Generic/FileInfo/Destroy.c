@@ -22,35 +22,28 @@
  * SOFTWARE.
  */
 
-#pragma once
+#include <AMPLE/IO/FileInfo.h>
 
 #include <stdbool.h>
 #include <stddef.h>
+#include <stdlib.h>
+#include <string.h>
 
-struct AMPLE_IO_FileInfo_t {
-    const char* fileName;
-    size_t fileNameLength;
-};
-
-#ifdef __cplusplus
-extern "C"
+void AMPLE_IO_FileInfo_Destroy(struct AMPLE_IO_FileInfo_t* fileInfo)
 {
-#endif
+    bool fileInfoIsNull = (fileInfo == (struct AMPLE_IO_FileInfo_t*)NULL);
+    if (fileInfoIsNull)
+    {
+        return;
+    }
 
-/**
- * @brief Construct a FileInfo instance.
- * Creates a FileInfo instance from the file name passed and places it in the FileInfo struct passed.
- * If it fails it will return false and if it succeeds it will return true.
- * The file name will be copied over so it is very important to destroy the object.
- * 
- * @param fileInfo A pointer pointing to sizeof(struct AMPLE_IO_FileInfo_t) bytes to place the new instance.
- * @param fileName The file name to base the FileInfo instance from.
- * @return bool 1 if the FileInfo constructor succeeded and 0 if it failed.
- */
-bool AMPLE_IO_FileInfo_Construct(struct AMPLE_IO_FileInfo_t* fileInfo, const char* fileName);
-
-void AMPLE_IO_FileInfo_Destroy(struct AMPLE_IO_FileInfo_t* fileInfo);
-
-#ifdef __cplusplus
+    bool fileNameIsNotNull = (fileInfo->fileName != (const char*)NULL);
+    if (fileNameIsNotNull)
+    {
+        free((void*)(fileInfo->fileName));
+        fileInfo->fileName = (const char*)NULL;
+    }
+    fileInfo->fileNameLength = 0;
+    
+    return;
 }
-#endif

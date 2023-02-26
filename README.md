@@ -22,11 +22,11 @@
         - [ ] Darwin support
         - [ ] FreeBSD support
         - [ ] Windows support
-    - [ ] FileInfo.Destroy()
-        - [ ] Linux support
-        - [ ] Darwin support
-        - [ ] FreeBSD support
-        - [ ] Windows support
+    - [x] FileInfo.Destroy()
+        - [x] Linux support
+        - [x] Darwin support
+        - [x] FreeBSD support
+        - [x] Windows support
 - [ ] File
     - [ ] File::Construct()
         - [ ] Linux support
