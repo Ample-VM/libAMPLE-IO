@@ -24,6 +24,7 @@
 
 #pragma once
 
+#include <stdbool.h>
 #include <stddef.h>
 
 struct FileInfo_t {
@@ -35,6 +36,19 @@ struct FileInfo_t {
 extern "C"
 {
 #endif
+
+/**
+ * @brief Construct a FileInfo instance.
+ * Creates a FileInfo instance from the file name passed and places it in the FileInfo struct passed.
+ * If it fails it will return false and if it succeeds it will return true.
+ * The file name will be copied over so it is very important to destroy the object.
+ * 
+ * @param fileInfo A pointer pointing to sizeof(struct AMPLE_IO_FileInfo_t) bytes to place the new instance.
+ * @param fileName The file name to base the FileInfo instance from.
+ * @return bool 1 if the FileInfo constructor succeeded and 0 if it failed.
+ */
+bool AMPLE_IO_FileInfo_Construct(struct FileInfo_t* fileInfo, const char* fileName);
+
 #ifdef __cplusplus
 }
 #endif
