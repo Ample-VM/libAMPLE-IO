@@ -27,7 +27,7 @@
 #include <stdbool.h>
 #include <stddef.h>
 
-struct FileInfo_t {
+struct AMPLE_IO_FileInfo_t {
     const char* fileName;
     size_t fileNameLength;
 };
@@ -47,7 +47,7 @@ extern "C"
  * @param fileName The file name to base the FileInfo instance from.
  * @return bool 1 if the FileInfo constructor succeeded and 0 if it failed.
  */
-bool AMPLE_IO_FileInfo_Construct(struct FileInfo_t* fileInfo, const char* fileName);
+bool AMPLE_IO_FileInfo_Construct(struct AMPLE_IO_FileInfo_t* fileInfo, const char* fileName);
 
 #ifdef __cplusplus
 }

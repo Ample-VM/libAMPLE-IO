@@ -26,12 +26,13 @@
 
 #include <stdbool.h>
 #include <stddef.h>
+#include <stdlib.h>
 #include <string.h>
 
-bool AMPLE_IO_FileInfo_Construct(struct FileInfo_t* fileInfo, const char* fileName)
+bool AMPLE_IO_FileInfo_Construct(struct AMPLE_IO_FileInfo_t* fileInfo, const char* fileName)
 {
     bool fileInfoIsNull = (fileInfo == (struct AMPLE_IO_FileInfo_t*)NULL);
-    bool fileNameIsNull = ((fileInfoIsNull) ? true : (fileInfo->fileName == (const char*)NULL));
+    bool fileNameIsNull = ((fileInfoIsNull) ? true : (fileName== (const char*)NULL));
     if (fileInfoIsNull || fileNameIsNull)
     {
         return false;
