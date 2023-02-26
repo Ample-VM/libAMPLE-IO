@@ -2,11 +2,11 @@
 
 ## Support
 - [ ] FileInfo
-    - [ ] FileInfo::Construct()
-        - [ ] Linux support
-        - [ ] Darwin support
-        - [ ] FreeBSD support
-        - [ ] Windows support
+    - [x] FileInfo::Construct()
+        - [x] Linux support
+        - [x] Darwin support
+        - [x] FreeBSD support
+        - [x] Windows support
     - [ ] FileInfo.GetExists()
         - [ ] Linux support
         - [ ] Darwin support
