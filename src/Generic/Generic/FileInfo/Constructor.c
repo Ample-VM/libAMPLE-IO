@@ -45,6 +45,7 @@ bool AMPLE_IO_FileInfo_Construct(struct AMPLE_IO_FileInfo_t* fileInfo, const cha
     {
         return false;
     }
+    memcpy((void*)(fileInfo->fileName), (const void*)fileName, (fileNameLength + 1) * sizeof(const char*));
 
     fileInfo->fileNameLength = fileNameLength;
 
