@@ -9,7 +9,7 @@
         - [x] Windows support
     - [ ] FileInfo.GetExists()
         - [x] Linux support
-        - [ ] Darwin support
+        - [x] Darwin support
         - [x] FreeBSD support
         - [x] Windows support
     - [ ] FileInfo.GetLength()
