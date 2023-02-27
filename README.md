@@ -15,7 +15,7 @@
     - [ ] FileInfo.GetLength()
         - [x] Linux support
         - [ ] Darwin support
-        - [ ] FreeBSD support
+        - [x] FreeBSD support
         - [x] Windows support
     - [ ] FileInfo.GetName()
         - [ ] Linux support
