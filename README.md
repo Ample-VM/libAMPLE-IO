@@ -13,7 +13,7 @@
         - [x] FreeBSD support
         - [x] Windows support
     - [ ] FileInfo.GetLength()
-        - [ ] Linux support
+        - [x] Linux support
         - [ ] Darwin support
         - [ ] FreeBSD support
         - [x] Windows support
