@@ -26,6 +26,7 @@
 
 #include <stdbool.h>
 #include <stddef.h>
+#include <stdint.h>
 
 struct AMPLE_IO_FileInfo_t {
     const char* fileName;
@@ -50,6 +51,8 @@ extern "C"
 bool AMPLE_IO_FileInfo_Construct(struct AMPLE_IO_FileInfo_t* fileInfo, const char* fileName);
 
 bool AMPLE_IO_FileInfo_GetExists(struct AMPLE_IO_FileInfo_t* fileInfo);
+
+int64_t AMPLE_IO_FileInfo_GetLength(struct AMPLE_IO_FileInfo_t* fileInfo);
 
 void AMPLE_IO_FileInfo_Destroy(struct AMPLE_IO_FileInfo_t* fileInfo);
 
