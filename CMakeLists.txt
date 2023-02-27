@@ -21,3 +21,16 @@ endif()
 
 target_include_directories("AMPLE-IO_shared" PUBLIC "${CMAKE_CURRENT_LIST_DIR}/include/public")
 target_include_directories("AMPLE-IO_static" PUBLIC "${CMAKE_CURRENT_LIST_DIR}/include/public")
+
+install (TARGETS "AMPLE-IO_shared"
+         ARCHIVE DESTINATION lib
+         LIBRARY DESTINATION lib)
+
+install (TARGETS "AMPLE-IO_static"
+         ARCHIVE DESTINATION lib
+         LIBRARY DESTINATION lib)
+
+install(DIRECTORY "${CMAKE_SOURCE_DIR}/include/public/"
+        DESTINATION "include"
+        FILES_MATCHING
+        PATTERN "*.h")
