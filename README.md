@@ -12,9 +12,9 @@
         - [x] Darwin support
         - [x] FreeBSD support
         - [x] Windows support
-    - [ ] FileInfo.GetLength()
+    - [x] FileInfo.GetLength()
         - [x] Linux support
-        - [ ] Darwin support
+        - [x] Darwin support
         - [x] FreeBSD support
         - [x] Windows support
     - [ ] FileInfo.GetName()
