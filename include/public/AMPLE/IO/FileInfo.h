@@ -49,6 +49,8 @@ extern "C"
  */
 bool AMPLE_IO_FileInfo_Construct(struct AMPLE_IO_FileInfo_t* fileInfo, const char* fileName);
 
+bool AMPLE_IO_FileInfo_GetExists(struct AMPLE_IO_FileInfo_t* fileInfo);
+
 void AMPLE_IO_FileInfo_Destroy(struct AMPLE_IO_FileInfo_t* fileInfo);
 
 #ifdef __cplusplus
