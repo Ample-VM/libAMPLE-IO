@@ -16,7 +16,7 @@
         - [ ] Linux support
         - [ ] Darwin support
         - [ ] FreeBSD support
-        - [ ] Windows support
+        - [x] Windows support
     - [ ] FileInfo.GetName()
         - [ ] Linux support
         - [ ] Darwin support
