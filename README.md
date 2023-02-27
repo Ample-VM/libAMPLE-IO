@@ -11,7 +11,7 @@
         - [ ] Linux support
         - [ ] Darwin support
         - [ ] FreeBSD support
-        - [ ] Windows support
+        - [x] Windows support
     - [ ] FileInfo.GetLength()
         - [ ] Linux support
         - [ ] Darwin support
