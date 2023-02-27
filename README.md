@@ -7,7 +7,7 @@
         - [x] Darwin support
         - [x] FreeBSD support
         - [x] Windows support
-    - [ ] FileInfo.GetExists()
+    - [x] FileInfo.GetExists()
         - [x] Linux support
         - [x] Darwin support
         - [x] FreeBSD support
