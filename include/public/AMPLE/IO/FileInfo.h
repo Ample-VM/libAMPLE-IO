@@ -54,6 +54,17 @@ bool AMPLE_IO_FileInfo_GetExists(struct AMPLE_IO_FileInfo_t* fileInfo);
 
 int64_t AMPLE_IO_FileInfo_GetLength(struct AMPLE_IO_FileInfo_t* fileInfo);
 
+/**
+ * @brief Get the file name.
+ * Gets the filename from the fileinfo object and copies it to fileNaem.
+ * If fileName is NULL then the function retuns the bytes required to copy the file name.
+ * 
+ * @param fileInfo A pointer pointing to an instance of struct AMPLE_IO_FileInfo_t.
+ * @param fileName A pointer to where to copy the fileName.
+ * 
+ */
+size_t AMPLE_IO_FileInfo_GetName(struct AMPLE_IO_FileInfo_t* fileInfo, char* fileName, size_t fileNameSize);
+
 void AMPLE_IO_FileInfo_Destroy(struct AMPLE_IO_FileInfo_t* fileInfo);
 
 #ifdef __cplusplus
