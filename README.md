@@ -1,7 +1,7 @@
 # AMPLE IO Library
 
 ## Support
-- [ ] FileInfo
+- [x] FileInfo
     - [x] FileInfo::Construct()
         - [x] Linux support
         - [x] Darwin support
@@ -17,9 +17,9 @@
         - [x] Darwin support
         - [x] FreeBSD support
         - [x] Windows support
-    - [ ] FileInfo.GetName()
+    - [x] FileInfo.GetName()
         - [x] Linux support
-        - [ ] Darwin support
+        - [x] Darwin support
         - [x] FreeBSD support
         - [x] Windows support
     - [x] FileInfo.Destroy()
