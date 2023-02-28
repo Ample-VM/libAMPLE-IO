@@ -18,7 +18,7 @@
         - [x] FreeBSD support
         - [x] Windows support
     - [ ] FileInfo.GetName()
-        - [ ] Linux support
+        - [x] Linux support
         - [ ] Darwin support
         - [ ] FreeBSD support
         - [x] Windows support
