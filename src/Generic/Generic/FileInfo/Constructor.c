@@ -32,20 +32,20 @@
 bool AMPLE_IO_FileInfo_Construct(struct AMPLE_IO_FileInfo_t* fileInfo, const char* fileName)
 {
     bool fileInfoIsNull = (fileInfo == (struct AMPLE_IO_FileInfo_t*)NULL);
-    bool fileNameIsNull = ((fileInfoIsNull) ? true : (fileName== (const char*)NULL));
+    bool fileNameIsNull = ((fileInfoIsNull) ? true : (fileName == (const char*)NULL));
     if (fileInfoIsNull || fileNameIsNull)
     {
         return false;
     }
 
-    size_t fileNameLength = strlen(fileName);
-    fileInfo->fileName = (const char*)malloc((fileNameLength + 1) * sizeof(const char));
+    size_t fileNameLength = strlen(fileName) + 1;
+    fileInfo->fileName = (const char*)malloc(fileNameLength * sizeof(const char));
     bool fileNameNotAllocated = (fileInfo->fileName == (const char*)NULL);
     if (fileNameNotAllocated)
     {
         return false;
     }
-    memcpy((void*)(fileInfo->fileName), (const void*)fileName, (fileNameLength + 1) * sizeof(const char*));
+    memcpy((void*)(fileInfo->fileName), (const void*)fileName, fileNameLength * sizeof(const char));
 
     fileInfo->fileNameLength = fileNameLength;
 
