@@ -21,7 +21,7 @@
         - [ ] Linux support
         - [ ] Darwin support
         - [ ] FreeBSD support
-        - [ ] Windows support
+        - [x] Windows support
     - [x] FileInfo.Destroy()
         - [x] Linux support
         - [x] Darwin support
