@@ -20,7 +20,7 @@
     - [ ] FileInfo.GetName()
         - [x] Linux support
         - [ ] Darwin support
-        - [ ] FreeBSD support
+        - [x] FreeBSD support
         - [x] Windows support
     - [x] FileInfo.Destroy()
         - [x] Linux support
