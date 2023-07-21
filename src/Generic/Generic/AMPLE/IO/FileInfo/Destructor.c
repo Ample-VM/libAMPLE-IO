@@ -35,3 +35,21 @@ static inline bool AMPLE_IO_FileInfo_Destructor_CheckIfArgumentsAreInvalid(struc
 
     return !fileInfoIsNull;
 }
+
+AMPLE_IO_FILEINFO_DESTRUCTOR AMPLE_IO_FileInfo_Destructor(struct AMPLE_IO_FileInfo_t* fileInfo)
+{
+    bool invalidArguments = AMPLE_IO_FileInfo_Destructor_CheckIfArgumentsAreInvalid(fileInfo);
+    if (invalidArguments)
+    {
+        return;
+    }
+
+    bool fileNameNeedsCleanup = (fileInfo->_fileName != (const char*)NULL);
+    if (fileNameNeedsCleanup)
+    {
+        free((void*)(fileInfo->_fileName));
+        fileInfo->_fileName = (const char*)NULL;
+    }
+
+    memset((void*)(fileInfo->_fileName), 0, sizeof(struct AMPLE_IO_FileInfo_t));
+}
