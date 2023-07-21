@@ -28,3 +28,22 @@
 #include <stddef.h>
 #include <stdlib.h>
 #include <string.h>
+
+static inline bool AMPLE_IO_FileInfo_Constructor_CheckIfArgumentsAreInvalid(struct AMPLE_IO_FileInfo_t* fileInfo, const char* fileName)
+{
+    bool fileInfoIsNull = (fileInfo == (struct AMPLE_IO_FileInfo_t*)NULL);
+    bool fileNameIsNull = (fileName == (const char*)NULL);
+    if (fileInfoIsNull || fileNameIsNull)
+    {
+        return true;
+    }
+
+    size_t fileNameSize = strlen(fileName);
+    bool emptyFileName = (fileNameSize == 0);
+    if (emptyFileName)
+    {
+        return true;
+    }
+
+    return false;
+}
