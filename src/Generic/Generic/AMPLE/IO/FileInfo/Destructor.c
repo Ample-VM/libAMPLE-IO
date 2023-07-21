@@ -28,3 +28,10 @@
 #include <stddef.h>
 #include <stdlib.h>
 #include <string.h>
+
+static inline bool AMPLE_IO_FileInfo_Destructor_CheckIfArgumentsAreInvalid(struct AMPLE_IO_FileInfo_t* fileInfo)
+{
+    bool fileInfoIsNull = (fileInfo == (struct AMPLE_IO_FileInfo_t*)NULL);
+
+    return !fileInfoIsNull;
+}
