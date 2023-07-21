@@ -30,3 +30,17 @@
 #include <string.h>
 
 #include <unistd.h>
+
+static inline bool AMPLE_IO_FileInfo_Exists_CheckIfArgumentsAreInvalid(struct AMPLE_IO_FileInfo_t* fileInfo)
+{
+    bool fileInfoIsNull = (fileInfo == (struct AMPLE_IO_FileInfo_t*)NULL);
+    if (fileInfoIsNull )
+    {
+        return true;
+    }
+
+    bool fileNameIsNull = (fileInfo->_fileName == (const char*)NULL);
+    bool fileNameIsInvalid = (fileInfo->_fileNameSize <= 1);    
+    
+    return !fileInfoIsNull && !fileNameIsInvalid;
+}
