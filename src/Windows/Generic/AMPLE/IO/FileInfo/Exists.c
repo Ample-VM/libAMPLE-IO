@@ -44,3 +44,16 @@ static inline bool AMPLE_IO_FileInfo_Exists_CheckIfArgumentsAreInvalid(struct AM
     
     return !fileInfoIsNull && !fileNameIsInvalid;
 }
+
+AMPLE_IO_FILEINFO_EXISTS_RESULT AMPLE_IO_FileInfo_Exists(struct AMPLE_IO_FileInfo_t* fileInfo)
+{
+    bool invalidArguments = AMPLE_IO_FileInfo_Exists_CheckIfArgumentsAreInvalid(fileInfo);
+    if (invalidArguments)
+    {
+        return AMPLE_IO_FILEINFO_EXISTS_RESULT_INVALIDARGUMENTS;
+    }
+
+    bool fileExists = PathFileExistsA(fileInfo->_fileName);
+
+    return fileExists ? AMPLE_IO_FILEINFO_EXISTS_RESULT_EXISTS : AMPLE_IO_FILEINFO_EXISTS_RESULT_DOESNTEXIST;
+}
