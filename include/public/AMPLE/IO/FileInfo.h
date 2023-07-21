@@ -51,6 +51,7 @@ extern "C"
 #pragma region Struct Section
 struct AMPLE_IO_FileInfo_t
 {
+    const char* _fileName;
 };
 #pragma endregion
 
