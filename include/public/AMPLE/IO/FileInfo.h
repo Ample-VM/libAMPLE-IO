@@ -28,8 +28,10 @@
 #pragma region Include Section
 #ifndef __cplusplus
     #include <stddef.h>
+    #include <stdint.h>
 #else
     #include <cstddef>
+    #include <cstdint>
 #endif
 #pragma endregion
 
