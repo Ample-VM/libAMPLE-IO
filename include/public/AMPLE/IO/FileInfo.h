@@ -27,7 +27,9 @@
 
 #pragma region Include Section
 #ifndef __cplusplus
+    #include <stddef.h>
 #else
+    #include <cstddef>
 #endif
 #pragma endregion
 
