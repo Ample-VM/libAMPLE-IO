@@ -52,6 +52,7 @@ extern "C"
 struct AMPLE_IO_FileInfo_t
 {
     const char* _fileName;
+    size_t _fileNameSize;
 };
 #pragma endregion
 
