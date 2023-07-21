@@ -37,6 +37,11 @@
 
 
 #pragma region Define Section
+#define AMPLE_IO_FILEINFO_CONSTRUCTOR_RESULT int8_t
+
+#define AMPLE_IO_FILEINFO_CONSTRUCTOR_RESULT_SUCCESS INT8_C(0)
+#define AMPLE_IO_FILEINFO_CONSTRUCTOR_RESULT_INVALIDARGUMENTS INT8_C(-1)
+#define AMPLE_IO_FILEINFO_CONSTRUCTOR_RESULT_OUTOFMEMORY INT8_C(-2)
 #pragma endregion
 
 
@@ -58,6 +63,7 @@ struct AMPLE_IO_FileInfo_t
 
 
 #pragma region Fuction Section
+AMPLE_IO_FILEINFO_CONSTRUCTOR_RESULT AMPLE_IO_FileInfo_Constructor(struct AMPLE_IO_FileInfo_t* fileInfo, const char* fileName);
 #pragma endregion
 
 
