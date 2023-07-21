@@ -49,6 +49,9 @@ extern "C"
 
 
 #pragma region Struct Section
+struct AMPLE_IO_FileInfo_t
+{
+};
 #pragma endregion
 
 
