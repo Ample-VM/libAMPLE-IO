@@ -47,3 +47,28 @@ static inline bool AMPLE_IO_FileInfo_Constructor_CheckIfArgumentsAreInvalid(stru
 
     return false;
 }
+
+AMPLE_IO_FILEINFO_CONSTRUCTOR_RESULT AMPLE_IO_FileInfo_Constructor(struct AMPLE_IO_FileInfo_t* fileInfo, const char* fileName)
+{
+    bool invalidArguments = AMPLE_IO_FileInfo_Constructor_CheckIfArgumentsAreInvalid(fileInfo, fileName);
+    if (invalidArguments)
+    {
+        return AMPLE_IO_FILEINFO_CONSTRUCTOR_RESULT_INVALIDARGUMENTS;
+    }
+
+    size_t fileNameSize = strlen(fileName);
+    fileInfo->_fileNameSize = fileNameSize + 1;
+    fileInfo->_fileName = (const char*)malloc(fileInfo->_fileNameSize * sizeof(const char));
+    bool outOfMemory = (fileInfo->_fileName == (const char*)NULL);
+    if (outOfMemory)
+    {
+        return AMPLE_IO_FILEINFO_CONSTRUCTOR_RESULT_OUTOFMEMORY;
+    }
+
+    (void)memcpy((void*)(fileInfo->_fileName), (const void*)fileName, fileInfo->_fileNameSize * sizeof(const char));
+
+    fileInfo->Exists = AMPLE_IO_FileInfo_Exists;
+    fileInfo->Destructor = AMPLE_IO_FileInfo_Destructor;
+
+    return AMPLE_IO_FILEINFO_CONSTRUCTOR_RESULT_SUCCESS;
+}
