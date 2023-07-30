@@ -68,6 +68,7 @@ AMPLE_IO_FILEINFO_CONSTRUCTOR_RESULT AMPLE_IO_FileInfo_Constructor(struct AMPLE_
     (void)memcpy((void*)(fileInfo->_fileName), (const void*)fileName, fileInfo->_fileNameSize * sizeof(const char));
 
     fileInfo->Exists = AMPLE_IO_FileInfo_Exists;
+    fileInfo->Lenght = AMPLE_IO_FileInfo_Length;
     fileInfo->Destructor = AMPLE_IO_FileInfo_Destructor;
 
     return AMPLE_IO_FILEINFO_CONSTRUCTOR_RESULT_SUCCESS;

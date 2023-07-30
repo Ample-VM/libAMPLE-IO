@@ -39,6 +39,7 @@
 #pragma region Define Section
 #define AMPLE_IO_FILEINFO_CONSTRUCTOR_RESULT int8_t
 #define AMPLE_IO_FILEINFO_EXISTS_RESULT int8_t
+#define AMPLE_IO_FILEINFO_LENGTH_RESULT int8_t
 #define AMPLE_IO_FILEINFO_DESTRUCTOR void
 
 #define AMPLE_IO_FILEINFO_CONSTRUCTOR_RESULT_SUCCESS INT8_C(0)
@@ -47,6 +48,9 @@
 #define AMPLE_IO_FILEINFO_EXISTS_RESULT_DOESNTEXIST INT8_C(0)
 #define AMPLE_IO_FILEINFO_EXISTS_RESULT_EXISTS INT8_C(1)
 #define AMPLE_IO_FILEINFO_EXISTS_RESULT_INVALIDARGUMENTS INT8_C(-1)
+#define AMPLE_IO_FILEINFO_LENGHT_RESULT_SUCCESS INT8_C(0)
+#define AMPLE_IO_FILEINFO_LENGHT_RESULT_INVALIDARGUMENTS INT8_C(-1)
+#define AMPLE_IO_FILEINFO_LENGTH_RESULT_INTERNALERROR INT8_C(-2)
 #pragma endregion
 
 
@@ -64,6 +68,7 @@ struct AMPLE_IO_FileInfo_t
     const char* _fileName;
     size_t _fileNameSize;
     AMPLE_IO_FILEINFO_EXISTS_RESULT(*Exists)(struct AMPLE_IO_FileInfo_t*);
+    AMPLE_IO_FILEINFO_LENGTH_RESULT(*Lenght)(struct AMPLE_IO_FileInfo_t*, int64_t*);
     AMPLE_IO_FILEINFO_DESTRUCTOR(*Destructor)(struct AMPLE_IO_FileInfo_t*);
 };
 #pragma endregion
@@ -72,6 +77,7 @@ struct AMPLE_IO_FileInfo_t
 #pragma region Fuction Section
 AMPLE_IO_FILEINFO_CONSTRUCTOR_RESULT AMPLE_IO_FileInfo_Constructor(struct AMPLE_IO_FileInfo_t* fileInfo, const char* fileName);
 AMPLE_IO_FILEINFO_EXISTS_RESULT AMPLE_IO_FileInfo_Exists(struct AMPLE_IO_FileInfo_t* fileInfo);
+AMPLE_IO_FILEINFO_LENGTH_RESULT AMPLE_IO_FileInfo_Length(struct AMPLE_IO_FileInfo_t* fileInfo, int64_t* length);
 AMPLE_IO_FILEINFO_DESTRUCTOR AMPLE_IO_FileInfo_Destructor(struct AMPLE_IO_FileInfo_t* fileInfo);
 #pragma endregion
 
