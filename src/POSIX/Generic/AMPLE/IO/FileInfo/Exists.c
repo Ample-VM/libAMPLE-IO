@@ -42,7 +42,7 @@ static inline bool AMPLE_IO_FileInfo_Exists_CheckIfArgumentsAreInvalid(struct AM
     bool fileNameIsNull = (fileInfo->_fileName == (const char*)NULL);
     bool fileNameIsInvalid = (fileInfo->_fileNameSize <= 1);    
     
-    return !fileInfoIsNull && !fileNameIsInvalid;
+    return fileInfoIsNull || fileNameIsInvalid;
 }
 
 AMPLE_IO_FILEINFO_EXISTS_RESULT AMPLE_IO_FileInfo_Exists(struct AMPLE_IO_FileInfo_t* fileInfo)

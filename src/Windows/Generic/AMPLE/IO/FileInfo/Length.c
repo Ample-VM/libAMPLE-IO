@@ -43,7 +43,7 @@ static inline bool AMPLE_IO_FileInfo_Length_CheckIfArgumentsAreInvalid(struct AM
     bool fileNameIsNull = (fileInfo->_fileName == (const char*)NULL);
     bool fileNameIsInvalid = (fileInfo->_fileNameSize <= 1);    
     
-    return !fileInfoIsNull && !fileNameIsInvalid;
+    return fileInfoIsNull || fileNameIsInvalid;
 }
 
 AMPLE_IO_FILEINFO_LENGTH_RESULT AMPLE_IO_FileInfo_Length(struct AMPLE_IO_FileInfo_t* fileInfo, int64_t* length)
