@@ -61,6 +61,13 @@ AMPLE_IO_FILEINFO_LENGTH_RESULT AMPLE_IO_FileInfo_Length(struct AMPLE_IO_FileInf
     {
         return AMPLE_IO_FILEINFO_LENGTH_RESULT_INTERNALERROR;
     }
+
+    bool isDirectory = S_ISDIR(st.st_mode);
+    if (isDirectory)
+    {
+        return AMPLE_IO_FILEINFO_LENGHT_RESULT_DIRECTORY;
+    }
+
     *length = (int64_t)(st.st_size);
 
     return AMPLE_IO_FILEINFO_LENGHT_RESULT_SUCCESS;
