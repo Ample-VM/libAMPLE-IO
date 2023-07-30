@@ -54,7 +54,13 @@ AMPLE_IO_FILEINFO_LENGTH_RESULT AMPLE_IO_FileInfo_Length(struct AMPLE_IO_FileInf
         return AMPLE_IO_FILEINFO_LENGHT_RESULT_INVALIDARGUMENTS;
     }
 
-    HANDLE handle = CreateFile(name, GENERIC_READ, FILE_SHARE_READ | FILE_SHARE_WRITE, NULL, OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, NULL);
+    DWORD attributes = GetFileAttributesA(fileInfo->_fileName);
+    bool isDirectory = ((attributes & FILE_ATTRIBUTE_DIRECTORY) == FILE_ATTRIBUTE_DIRECTORY);
+    if (isDirectory)
+    {
+        return AMPLE_IO_FILEINFO_LENGHT_RESULT_DIRECTORY;
+    }
+
     HANDLE handle = CreateFile(fileInfo->_fileName, GENERIC_READ, FILE_SHARE_READ | FILE_SHARE_WRITE, NULL, OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, NULL);
     if (handle == INVALID_HANDLE_VALUE)
     {
